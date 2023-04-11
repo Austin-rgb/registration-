@@ -56,32 +56,11 @@ private void addData(String regno, String name, String dob, String gender){
             Statement statement;
 
             statement = connection.createStatement();
-
-            ResultSet resultSet;
-
-            resultSet = statement.executeQuery(
+            statement.executeUpdate(
 
                 "INSERT INTO table_name (regno, name, dob, gender)
 VALUES ("+regno+","+name+","+dob+"," +gender+");"
             );
-
-            int code;
-
-            String title;
-
-            while (resultSet.next()) {
-
-                code = resultSet.getInt("code");
-
-                title = resultSet.getString("title").trim();
-
-                System.out.println("Code : " + code
-
-                                   + " Title : " + title);
-
-            }
-
-            resultSet.close();
 
             statement.close();
 
