@@ -11,7 +11,12 @@ Connection connection=null;
 
 
 
-        try {
+       
+        JFrame myframe=new JFrame("Registration");
+
+    } // function ends
+private void add(int regno, String name, String dob, String gender){
+     try {
 
             // below two lines are used for connectivity.
 
@@ -41,7 +46,9 @@ Connection connection=null;
 
             resultSet = statement.executeQuery(
 
-                "select * from designation");
+                "INSERT INTO table_name (regno, name, dob, gender)
+VALUES ("+regno+","+name+","+dob+"," +gender+");"
+            );
 
             int code;
 
@@ -72,8 +79,5 @@ Connection connection=null;
             System.out.println(exception);
 
         }
-        JFrame myframe=new JFrame("Registration");
-
-    } // function ends
-
+}
 } // class ends
