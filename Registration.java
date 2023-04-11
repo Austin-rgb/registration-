@@ -26,10 +26,11 @@ Connection connection=null;
         saveBtn.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                
+                addData(regNoBox.getText(),nameBox.getText(),dobBox.getText(),genderBox.getText());
+            }
         myframe.add(mypanel);
     } // function ends
-private void add(int regno, String name, String dob, String gender){
+private void addData(String regno, String name, String dob, String gender){
      try {
 
             // below two lines are used for connectivity.
