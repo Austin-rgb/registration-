@@ -4,7 +4,18 @@ import java.awt.event.*;
 public class Registration {
 Connection connection=null;
     public static void main(String arg[])
-    {       
+    {     try{
+        // below two lines are used for connectivity.
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/mydb",
+                "mydbuser", "mydbuser");
+            // mydb is database
+            // mydbuser is name of database
+            // mydbuser is password of database
+    }catch (Exception e){
+        System.out.println(e);
+    }
         JFrame myframe=new JFrame("Registration");
         JPanel mypanel=new JPanel();
         mypanel.setLayout(new GridLayout(2,5));
@@ -36,19 +47,10 @@ Connection connection=null;
     } // function ends
 private void addData(String regno, String name, String dob, String gender){
      try {
-            // below two lines are used for connectivity.
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/mydb",
-                "mydbuser", "mydbuser");
-            // mydb is database
-            // mydbuser is name of database
-            // mydbuser is password of database
             Statement statement;
             statement = connection.createStatement();
             statement.executeUpdate(
-                "INSERT INTO table_name (regno, name, dob, gender)
-VALUES ("+regno+","+name+","+dob+"," +gender+");"
+                "INSERT INTO table_name (regno, name, dob, gender) VALUES ("+regno+","+name+","+dob+"," +gender+");"
             );
             statement.close();
             connection.close();
