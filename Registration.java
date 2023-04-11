@@ -1,6 +1,6 @@
 import java.sql.*;
 import javax.swing.*;
-
+import java.awt.event.*;
 
 public class Registration {
 Connection connection=null;
@@ -23,6 +23,10 @@ Connection connection=null;
         dobBox=new JTextField(10),
         genderBox=new JTextField(10);
         JButton saveBtn=new JButton("Save");
+        saveBtn.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                
         myframe.add(mypanel);
     } // function ends
 private void add(int regno, String name, String dob, String gender){
