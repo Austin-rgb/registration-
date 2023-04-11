@@ -29,6 +29,7 @@ Connection connection=null;
             @Override
             public void actionPerformed(ActionEvent e){
                 addData(regNoBox.getText(),nameBox.getText(),dobBox.getText(),genderBox.getText());
+                regN
             }
         mypanel.add(saveBtn);
         myframe.add(mypanel);
