@@ -13,7 +13,17 @@ Connection connection=null;
 
        
         JFrame myframe=new JFrame("Registration");
-
+        JPanel mypanel=new JPanel();
+        JLabel regNoLbl=new JLabel("Registration Number"),
+        nameLbl=new JLabel("Name"),
+        dobLbl=new JLabel("Date of Birth"),
+        genderLbl=new JLabel("Gender");
+        JTextField regNoBox=new JTextField(10),
+        nameBox=new JTextField(10),
+        dobBox=new JTextField(10),
+        genderBox=new JTextField(10);
+        JButton saveBtn=new JButton("Save");
+        myframe.add(mypanel);
     } // function ends
 private void add(int regno, String name, String dob, String gender){
      try {
